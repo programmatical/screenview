@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Sean's Screenshots</title>
+   <link rel="stylesheet" href="public/styles/main.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.2/jquery.js"></script>
+   <script src="public/scripts/main.js"></script>
+</head>
+<body>
+   <div class="app">
+      {% if found %}
+         <img src="{{ image }}" id="screenshot">
+         <div class="app-control">
+            <a href="{{ image }}"><i class="fa fa-expand"></i></a>
+         </div>
+      {% elseif base %}
+         <div class="app-info">
+            <h1>Sean's Screenshots</h1>
+            <p>Welcome, there are currently {{ image_count }} image(s) hosted here</p>
+         </div>
+      {% else %}
+         <div class="app-info">
+            <h1>404</h1>
+            <p>Couldn't find image</p>
+         </div>
+      {% endif %}
+   </div>
+</body>
+</html>
